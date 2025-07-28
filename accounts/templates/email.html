@@ -1,0 +1,173 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        /* @font-face {
+            font-family: "Edwardian Script ITC";
+            src: url(../../Font/ITCEDSCR.TTF);
+        } */
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .email__activation {
+            /* background: url('../../Image/email-bg.png') no-repeat center center/cover; */
+            background-color: #15434d;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #logo {
+            width: 15%;
+            margin: 5px 0px 30px 0px;
+        }
+
+        .email__activation h2,
+        h3 {
+            color: white;
+            font-size: 20px;
+        }
+
+        .email__activation p {
+            padding: 2px 150px;
+        }
+
+        .typist>h1 {
+            color: #fff;
+            /* font-family: "Edwardian Script ITC"; */
+            font-family: 'Dancing Script', cursive;
+            font-weight: normal;
+            font-size: 5rem;
+            margin: 0 0 10px;
+        }
+
+        .email__activate__btn {
+            padding: 13px 50px;
+            background-color: #56b124;
+            border-radius: 50px;
+            outline: none !important;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #fff;
+            transition: 0.3s;
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* term footer */
+        .term__footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #56b124;
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
+            color: #fff;
+            z-index: 999;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .typist>h1 {
+                font-size: 4rem;
+            }
+
+            #logo {
+                width: 20%;
+                margin-top: 10px;
+            }
+
+            .email__activation p {
+                padding: 2px 30px;
+                font-size: 1.3rem;
+                margin: 0px;
+            }
+            .email__activation h2,h3 {
+                font-size: 2.3rem;
+                padding: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 540px) {
+            .typist>h1 {
+                font-size: 2.3rem;
+            }
+            .email__activation p {
+                padding-bottom: 0px;
+                font-size: 1.3rem;
+            }
+            .email__activation h2,h3 {
+                padding-bottom: 0px;
+                font-size: 2rem;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .typist>h1 {
+                font-size: 2rem;
+            }
+
+            #logo {
+                width: 50%;
+                margin-top: -45px;
+            }
+
+            .email__activation p {
+                padding: 2px 30px;
+                font-size: 1rem;
+            }
+            .email__activation h2,h3 {
+                padding-bottom: 0px;
+                font-size: 1rem;
+            }
+
+            .term__footer {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email__activation">
+        <img class="email__bg" src={{background}} alt="background image">
+        <img id="logo" src={{img}} alt="logo">
+        <div class="typist">
+            <h1>
+                "Be a part of solution,
+                <br />
+                not a part of pollution."
+            </h1>
+        </div>
+        <h3 class="message">{{content}}</h3>
+        <button class="email__activate__btn"><a href={{site}}>Activate</a></button>
+        <div class="term__footer">
+            All rights reserved by Kabadi Techno Private Limited
+        </div>
+    </div>
+</body>
+
+</html>

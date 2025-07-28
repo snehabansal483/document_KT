@@ -1,0 +1,19 @@
+<html>
+
+<head>
+
+<title>Login</title>
+
+</head>
+
+<body>
+hi {{user.email}}
+<form action ='{% url "home" %}' method = 'POST'>
+    {% csrf_token %}
+    <input type="submit" value ="Login" style="font-size:15">
+    <a href='{% url "social:begin" "google-oauth2" %}'> Sign in with Google </a>
+    </form>
+    <br><br>
+    
+    <br><br>
+</body>
