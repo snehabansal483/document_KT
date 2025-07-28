@@ -37,20 +37,14 @@ flowchart TD
 
 ## Chapters
 
-1. [Account (User Management System)
-](01_account__user_management_system__.md)
-2. [User Profiles (Customer & Dealer)
-](02_user_profiles__customer___dealer__.md)
-3. [Address Management
-](03_address_management_.md)
-4. [Authentication Backend
-](04_authentication_backend_.md)
-5. [API Endpoints & Views
-](05_api_endpoints___views_.md)
-6. [Data Serializers
-](06_data_serializers_.md)
-7. [Email & QR Code Utilities
-](07_email___qr_code_utilities_.md)
+1. [Account (User Management System)](accounts_documentation/01_account__user_management_system__.md)
+2. [User Profiles (Customer & Dealer)](accounts_documentation/02_user_profiles__customer___dealer__.md)
+3. [Address Management](accounts_documentation/03_address_management_.md)
+4. [Authentication Backend](accounts_documentation/04_authentication_backend_.md)
+5. [API Endpoints & Views](accounts_documentation/05_api_endpoints___views_.md)
+6. [Data Serializers](accounts_documentation/06_data_serializers_.md)
+7. [Email & QR Code Utilities](accounts_documentation/07_email___qr_code_utilities_.md)
+
 
 ---
 
@@ -288,7 +282,7 @@ In this chapter, we learned that the `Account` is the fundamental building block
 
 However, an `Account` only provides basic information (email, name, role). What if we need more specific details for a `Customer` (like a profile picture) or a `Dealer` (like their business type)? That's where **User Profiles** come in, which we'll explore in the next chapter.
 
-[User Profiles (Customer & Dealer)](02_user_profiles__customer___dealer__.md)
+[User Profiles (Customer & Dealer)](accounts_documentation/02_user_profiles__customer___dealer__.md)
 
 ---
 
@@ -297,7 +291,7 @@ However, an `Account` only provides basic information (email, name, role). What 
 
 # Chapter 2: User Profiles (Customer & Dealer)
 
-In [Chapter 1: Account (User Management System)](01_account__user_management_system__.md), we learned that an `Account` is like your "master ID card" for the `document_KT` platform. It holds your basic identity (email, name) and tells the system if you're a `Customer` or a `Dealer`. But what if we need more specific details?
+In [Chapter 1: Account (User Management System)](accounts_documentation/01_account__user_management_system__.md), we learned that an `Account` is like your "master ID card" for the `document_KT` platform. It holds your basic identity (email, name) and tells the system if you're a `Customer` or a `Dealer`. But what if we need more specific details?
 
 Imagine you're signing up as a `Customer` on an online shopping site. Beyond your basic account, you might want to add a profile picture, or mark your profile as "personal" or for an "organization." Or, if you're a `Dealer` (like a business selling goods), you might need to specify if you're a 'Kabadi' (scrap dealer), a 'Collector', or a 'Recycler'.
 
@@ -590,7 +584,7 @@ User Profiles are essential for adding specific details beyond a user's basic `A
 
 Now that we understand how user accounts and profiles are managed, the next step is to explore how to handle their physical locations.
 
-[Address Management](03_address_management_.md)
+[Address Management](accounts_documentation/03_address_management_.md)
 
 ---
 
@@ -599,7 +593,7 @@ Now that we understand how user accounts and profiles are managed, the next step
 
 # Chapter 3: Address Management
 
-In [Chapter 1: Account (User Management System)](01_account__user_management_system__.md), we established the `Account` as your digital identity card. Then, in [Chapter 2: User Profiles (Customer & Dealer)](02_user_profiles__customer___dealer__.md), we added specific "badges" like `CustomerProfile` or `DealerProfile` to store details unique to your role. But what about where you *are*?
+In [Chapter 1: Account (User Management System)](accounts_documentation/01_account__user_management_system__.md), we established the `Account` as your digital identity card. Then, in [Chapter 2: User Profiles (Customer & Dealer)](accounts_documentation/02_user_profiles__customer___dealer__.md), we added specific "badges" like `CustomerProfile` or `DealerProfile` to store details unique to your role. But what about where you *are*?
 
 Imagine you're an online shopper, or a business that needs to send or receive goods. Where do you live? Where is your office? How does the system know where to deliver your purchases or send important documents? This is exactly what **Address Management** handles in our `document_KT` project!
 
@@ -857,7 +851,7 @@ Address Management is crucial for any platform that deals with physical location
 
 Now that we understand how accounts, profiles, and addresses are managed, the next logical step is to explore how users securely gain access to these features.
 
-[Authentication Backend](04_authentication_backend_.md)
+[Authentication Backend](accounts_documentation/04_authentication_backend_.md)
 
 ---
 
@@ -866,7 +860,7 @@ Now that we understand how accounts, profiles, and addresses are managed, the ne
 
 # Chapter 4: Authentication Backend
 
-In [Chapter 1: Account (User Management System)](01_account__user_management_system__.md), we learned about your "master ID card" – your `Account`. [Chapter 2: User Profiles (Customer & Dealer)](02_user_profiles__customer___dealer__.md) added specific "badges" for customers and dealers. And [Chapter 3: Address Management](03_address_management_.md) showed how to manage your locations. But there's a crucial question: How does our `document_KT` project know that the person trying to access all this information is *really* you?
+In [Chapter 1: Account (User Management System)](accounts_documentation/01_account__user_management_system__.md), we learned about your "master ID card" – your `Account`. [Chapter 2: User Profiles (Customer & Dealer)](accounts_documentation/02_user_profiles__customer___dealer__.md) added specific "badges" for customers and dealers. And [Chapter 3: Address Management](accounts_documentation/03_address_management_.md) showed how to manage your locations. But there's a crucial question: How does our `document_KT` project know that the person trying to access all this information is *really* you?
 
 Imagine you have a secret diary. You wouldn't leave it open for just anyone to read, right? You'd have a lock and key. Similarly, our `document_KT` platform needs a way to confirm your identity before letting you in to manage your account, profile, or addresses. This is exactly what the **Authentication Backend** does!
 
@@ -1040,7 +1034,7 @@ This diagram shows how your login request travels through different parts of the
 
 Beyond basic login, the Authentication Backend (and related parts of `accounts/views.py`) also powers other important security features:
 
-*   **Account Activation:** As seen in [Chapter 1](01_account__user_management_system__.md), when you sign up, an activation link is sent to your email. Clicking this link uses a special token to verify your email and set your `Account` to `is_active=True`, allowing you to log in.
+*   **Account Activation:** As seen in [Chapter 1](accounts_documentation/01_account__user_management_system__.md), when you sign up, an activation link is sent to your email. Clicking this link uses a special token to verify your email and set your `Account` to `is_active=True`, allowing you to log in.
 *   **Password Reset:** If you forget your password, you can request a password reset. The system sends you a link with a temporary token. This process also uses the Authentication Backend's logic indirectly to verify the token and allow you to set a new password.
 *   **Logout:** When you log out, your current session is ended, and your temporary access tokens are invalidated, ensuring that no one can continue using your account.
 
@@ -1052,7 +1046,7 @@ The **Authentication Backend** is the unsung hero of user security in our `docum
 
 Now that we understand how users securely log in, the next step is to explore how all these different "doors" (APIs and views) are organized and made available for the web or mobile applications to talk to.
 
-[API Endpoints & Views](05_api_endpoints___views_.md)
+[API Endpoints & Views](accounts_documentation/05_api_endpoints___views_.md)
 
 ---
 
@@ -1061,7 +1055,7 @@ Now that we understand how users securely log in, the next step is to explore ho
 
 # Chapter 5: API Endpoints & Views
 
-In [Chapter 4: Authentication Backend](04_authentication_backend_.md), we explored the "security guard" that ensures only you can log into your `document_KT` account. But once you're logged in, how does your phone app or web browser actually *talk* to our `document_KT` system to fetch your profile, add an address, or perform any other action?
+In [Chapter 4: Authentication Backend](accounts_documentation/04_authentication_backend_.md), we explored the "security guard" that ensures only you can log into your `document_KT` account. But once you're logged in, how does your phone app or web browser actually *talk* to our `document_KT` system to fetch your profile, add an address, or perform any other action?
 
 Imagine our `document_KT` project, which lives on a server somewhere, as a big, bustling office building. Inside, we have all the important departments: the "Account" department (Chapter 1), the "User Profiles" department (Chapter 2), and the "Address Management" department (Chapter 3).
 
@@ -1260,7 +1254,7 @@ class CustomerProfileAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 ```
 In this simplified example:
-*   `permission_classes = [IsAuthenticated]` ensures only users who are logged in (authenticated) can use this endpoint. This links directly to [Chapter 4: Authentication Backend](04_authentication_backend_.md).
+*   `permission_classes = [IsAuthenticated]` ensures only users who are logged in (authenticated) can use this endpoint. This links directly to [Chapter 4: Authentication Backend](accounts_documentation/04_authentication_backend_.md).
 *   `parser_classes = [MultiPartParser, FormParser]` is needed because we're expecting an image file (`ProfilePic`) in the incoming data.
 *   The `get` method handles requests to retrieve (GET) the profile. It fetches the `CustomerProfile` linked to the logged-in user (`request.user`) and uses the `CustomerProfileSerializer` to convert it into JSON data for the response.
 *   The `put` method handles requests to update (PUT) the profile. It takes the incoming data (`request.data`), updates the existing `customer_profile`, and then saves it via the serializer.
@@ -1275,7 +1269,7 @@ API Endpoints & Views are the vital communication layer of our `document_KT` pro
 
 Speaking of Serializers, you might have noticed they played a big role in the views above. In the next chapter, we'll dive deeper into what these "data translators and validators" are and how they help ensure data is always in the correct format.
 
-[Data Serializers](06_data_serializers_.md)
+[Data Serializers](accounts_documentation/06_data_serializers_.md)
 
 ---
 
@@ -1286,7 +1280,7 @@ Speaking of Serializers, you might have noticed they played a big role in the vi
 
 # Chapter 6: Data Serializers
 
-In [Chapter 5: API Endpoints & Views](05_api_endpoints___views__.md), we learned that our `document_KT` system has specific "doorways" (API Endpoints) and "receptionists" (Views) that allow other applications (like your phone app) to talk to it. When your app sends information (like your signup details) or asks for information (like your profile picture), it uses a common language like **JSON**.
+In [Chapter 5: API Endpoints & Views](accounts_documentation/05_api_endpoints___views__.md), we learned that our `document_KT` system has specific "doorways" (API Endpoints) and "receptionists" (Views) that allow other applications (like your phone app) to talk to it. When your app sends information (like your signup details) or asks for information (like your profile picture), it uses a common language like **JSON**.
 
 But our `document_KT` project, being built with Python and Django, works internally with **Python objects**. These are things like `Account` objects, `CustomerProfile` objects, or `Address` objects – the "blueprints" we discussed in Chapters 1, 2, and 3.
 
@@ -1303,7 +1297,7 @@ Without serializers, our API endpoints wouldn't be able to "understand" what ext
 
 ### Use Case: Signing Up (Again!)
 
-Let's revisit the signup process from [Chapter 1: Account (User Management System)](01_account__user_management_system__.md) and [Chapter 5: API Endpoints & Views](05_api_endpoints___views__.md), but this time, let's focus on the Serializer's role.
+Let's revisit the signup process from [Chapter 1: Account (User Management System)](accounts_documentation/01_account__user_management_system__.md) and [Chapter 5: API Endpoints & Views](accounts_documentation/05_api_endpoints___views__.md), but this time, let's focus on the Serializer's role.
 
 When you fill out the signup form on a website or app, you enter details like your full name, email, and password. This data is then sent to our `/register/` API endpoint.
 
@@ -1486,7 +1480,7 @@ Data Serializers are the unsung heroes of our `document_KT` project's API. They 
 
 Now that we understand how data is managed, structured, and communicated, the next chapter will explore some useful utilities that help our project perform tasks like sending emails and generating QR codes.
 
-[Email & QR Code Utilities](07_email___qr_code_utilities__.md)
+[Email & QR Code Utilities](accounts_documentation/07_email___qr_code_utilities__.md)
 
 ---
 
@@ -1495,7 +1489,7 @@ Now that we understand how data is managed, structured, and communicated, the ne
 
 # Chapter 7: Email & QR Code Utilities
 
-In our `document_KT` project, we've built the core pieces: your "master ID card" with [Chapter 1: Account (User Management System)](01_account__user_management_system__.md), your "role-specific badges" in [Chapter 2: User Profiles (Customer & Dealer)](02_user_profiles__customer___dealer__.md), and your "digital address book" in [Chapter 3: Address Management](03_address_management_.md). We also saw how you securely log in using the [Chapter 4: Authentication Backend](04_authentication_backend_.md) and how our system communicates via [Chapter 5: API Endpoints & Views](05_api_endpoints___views__.md) using "translators" called [Chapter 6: Data Serializers](06_data_serializers_.md).
+In our `document_KT` project, we've built the core pieces: your "master ID card" with [Chapter 1: Account (User Management System)](accounts_documentation/01_account__user_management_system__.md), your "role-specific badges" in [Chapter 2: User Profiles (Customer & Dealer)](accounts_documentation/02_user_profiles__customer___dealer__.md), and your "digital address book" in [Chapter 3: Address Management](accounts_documentation/03_address_management_.md). We also saw how you securely log in using the [Chapter 4: Authentication Backend](accounts_documentation/04_authentication_backend_.md) and how our system communicates via [Chapter 5: API Endpoints & Views](05_api_endpoints___views__.md) using "translators" called [Chapter 6: Data Serializers](accounts_documentation/06_data_serializers_.md).
 
 But what about common tasks that cut across many parts of our system? Like sending a "Welcome!" email when a new user signs up, or sending a link to reset a forgotten password? Or, how about creating a scannable image that uniquely identifies a user's KT ID for quick lookups?
 
@@ -1509,9 +1503,9 @@ Think of them as:
 
 ### Use Case: Activating an Account & Getting Your QR ID
 
-Let's recall the signup process from [Chapter 1](01_account__user_management_system__.md). When a new user (like Alice) signs up, her account is initially `inactive`. To verify her email and activate her account, an activation link is sent to her email. This is a job for the **Email Utility**.
+Let's recall the signup process from [Chapter 1](accounts_documentation/01_account__user_management_system__.md). When a new user (like Alice) signs up, her account is initially `inactive`. To verify her email and activate her account, an activation link is sent to her email. This is a job for the **Email Utility**.
 
-Once Alice's account is active and she has a [Chapter 2: User Profile](02_user_profiles__customer___dealer__.md) with a unique KT ID (e.g., `KTCP100001`), she might want a quick way to share or display that ID. A **QR Code Utility** can generate a scannable image linked to her KT ID, making it easy for others to scan and identify her.
+Once Alice's account is active and she has a [Chapter 2: User Profile](accounts_documentation/02_user_profiles__customer___dealer__.md) with a unique KT ID (e.g., `KTCP100001`), she might want a quick way to share or display that ID. A **QR Code Utility** can generate a scannable image linked to her KT ID, making it easy for others to scan and identify her.
 
 Let's explore how these utilities work in `document_KT`.
 
@@ -1526,7 +1520,7 @@ The `sendanemail` function is our go-to tool for this. It's designed to be flexi
 
 #### How It's Used (Example: Sending an Activation Email)
 
-When Alice signs up via the `SignupAPIView` (our "signup door" from [Chapter 5](05_api_endpoints___views__.md)), after her basic account is created, the system uses `sendanemail` to send her the activation link.
+When Alice signs up via the `SignupAPIView` (our "signup door" from [Chapter 5](accounts_documentation/05_api_endpoints___views__.md)), after her basic account is created, the system uses `sendanemail` to send her the activation link.
 
 ```python
 # Simplified from accounts/views.py - inside SignupAPIView
